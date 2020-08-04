@@ -1,0 +1,138 @@
+import java.util.Scanner;
+
+
+
+class Worker{
+	
+	
+	private int id;  //접근제한자 생성
+	private String name;
+	private String dept;
+	private String addr;
+	private String birth;
+	
+	
+//	Worker(int id,String name,String dept,String addr, String birth){  //생성자 생성
+	//	this.id=id; this.name=name; this.dept=dept; this.addr=addr; this.birth=birth;
+//	}
+
+
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public String getDept() {
+		return dept;
+	}
+
+
+	public void setDept(String dept) {
+		this.dept = dept;
+	}
+
+
+	public String getAddr() {
+		return addr;
+	}
+
+
+	public void setAddr(String addr) {
+		this.addr = addr;
+	}
+
+
+	public String getBirth() {
+		return birth;
+	}
+
+
+	public void setBirth(String birth) {
+		this.birth = birth;
+	}
+	
+
+}
+	
+
+ 
+
+public class Java7 {
+
+	public static void main(String[] args) {
+
+		System.out.println("<사원 정보 관리 프로그램>");
+		System.out.println("1");
+		System.out.println("2");
+		System.out.println("3");
+		
+		//Worker w=new Worker(123," 보리 ","경영","물길","12월");  //생성자 따로 설정 안 해도 된다
+		
+		Worker w=new Worker();
+		Scanner s=new Scanner(System.in);
+		
+		while(true) {
+			int r=s.nextInt();
+			switch(r) {
+			case 1: 
+				System.out.println("사번: ");
+				int id=s.nextInt();
+				w.setId(id);  //중요 코드 세팅하는거
+				System.out.println("이름: ");
+				String name=s.next();
+				w.setName(name);
+				System.out.println("부서: ");
+				String dept=s.next();
+				w.setDept(dept);
+				System.out.println("주소: ");
+				String addre=s.next();
+				w.setAddr(addre);
+				System.out.println("생일: ");
+				String birth=s.next();
+				w.setBirth(birth);
+				break;
+				
+			case 2:
+				System.out.println("검색하고자 하는 사원번호는?");
+				int st=s.nextInt(); //123떠야지
+				if(st==w.getId()) {
+					System.out.println(w.getName());
+					System.out.println(w.getDept());
+					System.out.println(w.getAddr());
+					System.out.println(w.getBirth());
+					
+					break;
+			}
+				
+			case 3:
+				System.out.println("프로그램 종료");
+				
+			}
+			
+		}
+		
+		
+
+		
+	
+		
+		
+		
+	}
+
+}
